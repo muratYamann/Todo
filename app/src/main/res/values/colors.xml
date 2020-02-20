@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#6A0771</color>
+    <color name="colorPrimaryDark">#616161</color>
+    <color name="colorPane">#33C2CAC9</color>
+    <color name="colorIconLauncherBackground">#FFFFFF</color>
+
+    <color name="colorAccent">#42A5F5</color>
+
+    <color name="buttonLabel">#d3d3d3</color>
+    <color name="icons">#FFFFFF</color>
+
+
+    <color name="textColor">#000000</color>
+
+
+    <color name="iceBlueTwo">#f5fcff</color>
+    <color name="charcoalGrey">#242424</color>
+
+    <color name="black_overlay">#66000000</color>
+
+
+    <!--tool bar transparanet -->
+    <color name="black_alpha_40">#66000000</color>
+
+    <color name="white">#ffffff</color>
+
+    <color name="youtube_description_color">#858484</color>
+    <color name="youtube_titlecolor">#171717</color>
+
+    <color name="pressed">#F65A2C</color>
+    <color name="focused">#F45526</color>
+    <color name="normal">#FD450F</color>
+    <color name="black">#000000</color>
+    <color name="desctription">#1F1F1F</color>
+
+</resources>

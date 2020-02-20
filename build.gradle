@@ -1,0 +1,129 @@
+buildscript {
+    ext.kotlin_version = '1.2.41'
+    ext.versions = [
+            'minSdk'             : 17,
+            'compileSdk'         : 28,
+            'supportVer'         : '28.0.0',
+            'buildTools'         : '28.0.3',
+            'androidPlugin'      : '3.5.2',
+            'kotlin'             : '1.3.10',
+            'constraintLayout'   : '1.1.2',
+            'gms'                : '4.2.0',
+            'dagger'             : '2.12',
+            'gson'               : '2.8.0',
+            'retrofit'           : '2.5.0',
+            'retrofitRxAdapter'  : '1.0.0',
+            'okhttp'             : '3.9.0',
+            'okhttpDownloader'   : '1.1.0',
+            'picasso'            : '2.5.2',
+            'rxJava'             : '2.1.7',
+            'rxAndroid'          : '2.0.1',
+            'jodaTime'           : "2.9.9",
+            'sourceCompat'       : JavaVersion.VERSION_1_8,
+            'targetCompat'       : JavaVersion.VERSION_1_8,
+            'ktx'                : '0.2',
+            'calligraphy'        : '2.2.0',
+            'rxRelay'            : '2.0.0',
+            'multidex'           : '2.0.0',
+            'timber'             : '4.7.0',
+            'anko'               : '0.10.5',
+            'coroutines'         : '1.3.3',
+            'roomVersion'        : '2.2.3',
+            'room'             : '1.1.0-beta2',
+            'roomRx'           : '1.0.0',
+            'roomTesting'      : '1.0.0',
+            'navigationVersion'  : '2.3.0-alpha01',
+            'workVersion'        : '2.2.0',
+            'dataBindingCompiler': '3.1.0'
+
+
+    ]
+
+    ext.deps = [
+            android       : [
+                    'gradlePlugin'    : "com.android.tools.build:gradle:${versions.androidPlugin}",
+                    'lifecycleExt'    : 'androidx.lifecycle:lifecycle-extensions:2.0.0',
+                    'lifecycleCommon' : 'androidx.lifecycle:lifecycle-common-java8:2.0.0',
+                    'constraintLayout': 'androidx.constraintlayout:constraintlayout:1.1.3',
+                    'roomRuntime'     : "android.arch.persistence.room:runtime:${versions.roomVersion}",
+                    'roomCompiler'    : "android.arch.persistence.room:compiler:${versions.roomVersion}",
+                    'roomRx'          : "android.arch.persistence.room:rxjava2:${versions.roomVersion}",
+            ],
+            support       : [
+                    'appCompat'    : 'androidx.appcompat:appcompat:1.2.0-alpha02',
+                    'recyclerView' : 'androidx.recyclerview:recyclerview:1.1.0',
+                    'cardView'     : 'androidx.cardview:cardview:1.0.0',
+                    'support'      : 'androidx.legacy:legacy-support-v4:1.0.0',
+                    'designSupport': 'com.google.android.material:material:1.2.0-alpha04',
+                    'drawable'     : "com.android.support:support-vector-drawable:${versions.supportVer}",
+            ],
+            kotlin        : [
+                    'gradlePlugin': "org.jetbrains.kotlin:kotlin-gradle-plugin:${versions.kotlin}",
+                    'stdlib'      : "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${versions.kotlin}",
+            ],
+            reactivex     : [
+                    'rxJava'   : "io.reactivex.rxjava2:rxjava:${versions.rxJava}",
+                    'rxAndroid': "io.reactivex.rxjava2:rxandroid:${versions.rxAndroid}",
+                    'rxRelay'  : "com.jakewharton.rxrelay2:rxrelay:${versions.rxRelay}"
+            ],
+            google        : [
+                    'gmsPlugin'      : "com.google.gms:google-services:${versions.gms}",
+                    'dagger'         : "com.google.dagger:dagger:${versions.dagger}",
+                    'daggerProcessor': "com.google.dagger:dagger-compiler:${versions.dagger}",
+                    'gson'           : "com.google.code.gson:gson:${versions.gson}",
+            ],
+            square        : [
+                    'retrofit'          : "com.squareup.retrofit2:retrofit:${versions.retrofit}",
+                    'gsonConverter'     : "com.squareup.retrofit2:converter-gson:${versions.retrofit}",
+                    'okhttp'            : "com.squareup.okhttp3:okhttp:${versions.okhttp}",
+                    'picasso'           : "com.squareup.picasso:picasso:${versions.picasso}",
+                    'okhttpDownloader'  : "com.jakewharton.picasso:picasso2-okhttp3-downloader:${versions.okhttpDownloader}",
+                    'retrofitRxAdapter' : "com.jakewharton.retrofit:retrofit2-rxjava2-adapter:${versions.retrofitRxAdapter}",
+                    'retrofitIntecepter': "com.squareup.okhttp3:logging-interceptor:${versions.okhttp}",
+                    'timber'            : "com.jakewharton.timber:timber:${versions.timber}"
+            ],
+            additional    : [
+                    'jodaTime': "joda-time:joda-time:${versions.jodaTime}"
+            ],
+            coroutines    : [
+                    'coroutinesCore'   : "org.jetbrains.kotlinx:kotlinx-coroutines-core:$versions.coroutines",
+                    'coroutinesAndroid': "org.jetbrains.kotlinx:kotlinx-coroutines-android:$versions.coroutines"
+            ],
+            navigationList: [
+                    'navigationFragment': "androidx.navigation:navigation-fragment-ktx:${versions.navigationVersion}",
+                    'navigationUi'      : "androidx.navigation:navigation-ui-ktx:${versions.navigationVersion}",
+                    'navigationDynamic' : "androidx.navigation:navigation-dynamic-features-fragment:${versions.navigationVersion}"
+            ],
+            multidex      : "androidx.multidex:multidex:${versions.multidex}",
+            anko          : "org.jetbrains.anko:anko-commons:${versions.anko}",
+            calligraphy   : "uk.co.chrisjenx:calligraphy:${versions.calligraphy}",
+            navigation    : "androidx.navigation:navigation-safe-args-gradle-plugin:2.3.0-alpha01",
+            work          : "androidx.work:work-runtime:${versions.workVersion}",
+
+    ]
+
+
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        def nav_version = "2.3.0-alpha01"
+        classpath deps.android.gradlePlugin
+        classpath deps.google.gmsPlugin
+        classpath deps.kotlin.gradlePlugin
+        classpath deps.navigation
+
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

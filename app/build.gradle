@@ -1,0 +1,94 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: "androidx.navigation.safeargs.kotlin"
+
+
+def buildVersionName = "1.0.0"
+def buildVersionCode = new Date().format("yyMMddHHmm", TimeZone.getTimeZone("Europe/Istanbul")).toInteger()
+
+
+android {
+
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+
+    compileSdkVersion versions.compileSdk
+    buildToolsVersion versions.buildTools
+    defaultConfig {
+        applicationId "com.yaman.todo"
+        minSdkVersion versions.minSdk
+        targetSdkVersion versions.compileSdk
+        versionCode  buildVersionCode
+        versionName  buildVersionName
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+        vectorDrawables.useSupportLibrary = true
+
+
+    }
+    buildTypes {
+        release {
+            postprocessing {
+                removeUnusedCode false
+                removeUnusedResources false
+                optimizeCode false
+                proguardFile 'proguard-rules.pro'
+            }
+
+        }
+        debug {
+            debuggable true
+        }
+    }
+    compileOptions {
+        sourceCompatibility versions.sourceCompat
+        targetCompatibility versions.targetCompat
+    }
+    dataBinding {
+        enabled = true
+    }
+
+
+    productFlavors {
+    }
+
+    repositories {
+    }
+
+
+}
+
+androidExtensions {
+    experimental = true
+}
+
+dependencies {
+    implementation project(':core')
+    implementation project(':data')
+
+
+    implementation deps.support.support
+
+    implementation deps.anko
+    implementation 'com.karumi:dexter:5.0.0'
+    implementation 'androidx.multidex:multidex:2.0.0'
+    implementation deps.android.constraintLayout
+
+    implementation('commons-validator:commons-validator:1.5.0') {
+        exclude group: 'commons-logging', module: 'commons-logging'
+    }
+    kapt deps.android.roomCompiler
+
+    implementation 'androidx.room:room-runtime:2.2.3'
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.2.1'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.2.1'
+    annotationProcessor 'androidx.room:room-compiler:2.2.3'
+
+
+    kapt deps.google.daggerProcessor
+
+}

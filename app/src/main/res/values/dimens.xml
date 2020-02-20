@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="progress_bar_size">50dp</dimen>
+
+    <dimen name="flowlayout_horizontal_padding">5dp</dimen>
+    <dimen name="flowlayout_vertical_padding">5dp</dimen>
+
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <dimen name="startPadding">16dp</dimen>
+    <dimen name="bottomMargin">16dp</dimen>
+    <dimen name="activity_magin_8">8dp</dimen>
+    <dimen name="activity_magin_4">4dp</dimen>
+
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="small_padding">6dp</dimen>
+    <dimen name="big_padding">16dp</dimen>
+
+    <dimen name="action_bar">?android:attr/actionBarSize</dimen>
+    <dimen name="marginStartEnd">16dp</dimen>
+    <dimen name="spacing">20dp</dimen>
+
+</resources>

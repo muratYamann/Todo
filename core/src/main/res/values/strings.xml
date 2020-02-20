@@ -1,0 +1,7 @@
+<resources>
+	<string name="app_name">ToDo </string>
+
+
+
+    <string name="connection_failed">Baglantı Saglanamadı</string>
+</resources>
